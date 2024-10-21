@@ -1,0 +1,60 @@
+<div class="w-75 mx-auto">
+  <h1 class="mt-3">Login :</h1>
+  <form [formGroup]="signInForm" (ngSubmit)="signin()">
+    @if(errMsg){
+    <div class="alert alert-danger p-1 my-1">
+      <p class="p-1 m-0">{{ errMsg }}</p>
+    </div>
+    }
+
+    <div class="my-3">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        formControlName="email"
+        class="form-control my-2"
+        id="email"
+      />
+      @if(signInForm.get('email')?.errors && signInForm.touched){
+      <div class="alert alert-danger p-1 my-1">
+        @if(signInForm.get('email')?.errors?.['required']){
+        <p class="p-1 m-0">Email is required</p>
+        } @if(signInForm.get('email')?.errors?.['email']){
+        <p class="p-1 m-0">Please write avalid email:examble&#64;email.com</p>
+        }
+      </div>
+      }
+    </div>
+
+    <div class="my-3">
+      <label for="password">Password</label>
+      <input
+        type="text"
+        formControlName="password"
+        class="form-control my-2"
+        id="password"
+      />
+      @if(signInForm.get('password')?.errors && signInForm.touched){
+      <div class="alert alert-danger p-1 my-1">
+        @if(signInForm.get('password')?.errors?.['required']){
+        <p class="p-1 m-0">Password is required</p>
+        } @if(signInForm.get('password')?.errors?.['pattern']){
+        <p class="p-1 m-0">
+          Password should be have : capital and small and special character
+        </p>
+        }
+      </div>
+      }
+    </div>
+    <button [disabled]="signInForm.invalid" class="bg-main text-white btn mb-3 ms-auto d-block">
+        @if (isloading) {
+            <span><i class="fa fa-spin fa-spinner"></i></span>
+        }
+        @else{
+            <span>login</span>
+        }
+        
+        
+    </button>
+  </form>
+</div>

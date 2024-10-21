@@ -1,0 +1,51 @@
+
+*{
+    box-sizing: border-box;
+}
+.pos img{
+    left: -127px !important;
+}
+button{
+    transition: all .5s;
+}
+button:hover{
+    background-color: red !important;
+    color: white !important;
+
+}
+.card{
+    transition: all 0.5 !important;
+}
+.card:hover{
+    transform: scale(1.07);
+}
+.topbanner{
+    height: 80%;
+}
+div.bg-warning img{
+left: -100px;
+}
+.transoparent{
+    background-color: transparent !important;
+}
+.contact-title {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.map-wrapper {
+    line-height: 1;
+}
+.text-info {
+    color: #000 !important;
+    margin-bottom: 20px;
+}
+.bg-contact{
+    background-color: #F5F5F5;
+}
+.contact-color{
+    background-color: #FFFFFF;
+}
+.height{
+    height: 704.33px;
+}
