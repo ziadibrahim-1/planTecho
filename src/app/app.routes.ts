@@ -9,6 +9,8 @@ import { RegisterComponent } from './layout/pages/register/register.component';
 import { NotfoundComponent } from './layout/additions/notfound/notfound.component';
 import { authGuard } from './shared/guard/auth.guard';
 import { CartComponent } from './layout/pages/cart/services.component';
+import { PlantChartsComponent } from './layout/pages/plant-charts/plant-charts.component';
+import { ForgetpasswordComponent } from './layout/additions/forgetpassword/forgetpassword.component';
 
 export const routes: Routes = [
     {path : '' , redirectTo : 'home' , pathMatch : 'full'},
@@ -20,5 +22,7 @@ export const routes: Routes = [
     {path : 'categories' , component:CategoriesComponent , canActivate:[authGuard]},
     {path : 'login' , component:LoginComponent},
     {path : 'register' , component:RegisterComponent},
+    {path:'forgetpassword',component:ForgetpasswordComponent},
+    {path: 'plant-charts', component: PlantChartsComponent},
     {path : '**' , component:NotfoundComponent}
 ];

@@ -1,0 +1,24 @@
+.container {
+  max-width: 900px;
+  margin: auto;
+  margin-bottom: 200px !important;
+}
+
+.charts-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.chart {
+  flex: 1 1 calc(50% - 20px);
+  min-width: 300px;
+  height: 300px;
+}
+
+canvas {
+  background-color: #f9fbe7; 
+  border-radius: 8px;
+  padding: 10px;
+}

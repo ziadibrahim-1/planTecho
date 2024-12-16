@@ -23,11 +23,11 @@ export class RegisterComponent {
   isloding!:Boolean
     constructor(private _AuthService:AuthService,private _Router:Router){}
   checkRepasswordMatch(g:AbstractControl){
-    if(g.get('password')?.value === g.get('rePassword')?.value){
+    if(g.get('password')?.value === g.get('password_confirmation')?.value){
       return null
     }
     else{
-      g.get('rePassword')?.setErrors({mismatch:true})
+      g.get('password_confirmation')?.setErrors({mismatch:true})
       return {mismatch:true}
     }
   }
@@ -47,7 +47,7 @@ export class RegisterComponent {
         }
       })
     }
-    // console.log(this.registerForm.get('name')?.errors);
+    console.log(this.registerForm.get('name')?.errors);
     
   }
 }

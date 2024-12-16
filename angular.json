@@ -82,7 +82,8 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "E-commerceApp:build"
+            "buildTarget": "E-commerceApp:build",
+            "proxyConfig": "proxy.conf.json"
           }
         },
         "test": {

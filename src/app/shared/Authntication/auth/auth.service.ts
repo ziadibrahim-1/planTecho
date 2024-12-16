@@ -29,6 +29,16 @@ export class AuthService {
   return this._HttpClient.post(`${Environment.baseUrl}api/v1/auth/signin`,data)
   }
 
+  sendEmailAPI(email: string): Observable<any> {
+    return this._HttpClient.post(`${Environment.baseUrl}api/v1/auth/forgotPasswords`, email);
+  }
+  sendCodeAPI(code: string): Observable<any> {
+    return this._HttpClient.post(`${Environment.baseUrl}api/v1/auth/verifyResetCode`, code);
+  }
+  resetDataAPI(userData: any): Observable<any> {
+    return this._HttpClient.put(`${Environment.baseUrl}api/v1/auth/resetPassword`, userData);
+  }
+
   decodedata(){
     const token= JSON.stringify(localStorage.getItem('userToken'))
     const decoded = jwtDecode<tokenData>(token)

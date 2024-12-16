@@ -1,0 +1,35 @@
+<div class="container mt-5">
+  <div class="form-group">
+    <label for="plants" class="form-label">Select a Plant:</label>
+    <select id="plants" class="form-control" (change)="onPlantChange($event)">
+      <option value="" disabled selected>Select a plant</option>
+      <option *ngFor="let plant of plants" [value]="plant.name">
+        {{ plant.name }}
+      </option>
+    </select>
+  </div>
+
+  <div *ngIf="selectedPlant" class="mt-4">
+    <h4 class="text-center text-success mt-5">{{ selectedPlant.name }} Data</h4>
+    <div class="charts-container row mt-4">
+      <div class="col-md-6 chart">
+        <canvas
+          #pieChart
+          baseChart
+          [data]="pieChartData"
+          [type]="'pie'"
+          [options]="chartOptions"
+        ></canvas>
+      </div>
+      <div class="col-md-6 chart">
+        <canvas
+          #barChart
+          baseChart
+          [data]="barChartData"
+          [type]="'bar'"
+          [options]="chartOptions"
+        ></canvas>
+      </div>
+    </div>
+  </div>
+</div>

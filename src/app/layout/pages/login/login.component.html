@@ -46,15 +46,19 @@
       </div>
       }
     </div>
-    <button [disabled]="signInForm.invalid" class="bg-main text-white btn mb-3 ms-auto d-block">
+    <div class="d-flex justify-content-end align-items-center">
+      <a routerLink="/forgetpassword" class="text-info underline ms-3"> Forget password</a>
+      <button [disabled]="signInForm.invalid" class="bg-main text-white btn mb-3 d-block">
         @if (isloading) {
             <span><i class="fa fa-spin fa-spinner"></i></span>
         }
         @else{
             <span>login</span>
         }
-        
+
         
     </button>
+    </div>
+    
   </form>
 </div>
